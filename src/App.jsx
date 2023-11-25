@@ -19,10 +19,9 @@ function App() {
   });
   const getWeather = async (e) => {
     e.preventDefault();
-    const { ciudad, pais } = e.target.elements;
+    const { ciudad } = e.target.elements;
     const ciudadValor = ciudad.value;
-    const paisValor = pais.value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudadValor},${paisValor}&units=metric&appid=${KEY}&lang=es`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudadValor}&units=metric&appid=${KEY}&lang=es`;
     fetch(url)
       .then((res) => res.json())
       .then((data) =>
@@ -57,10 +56,11 @@ function App() {
   } = datos;
   return (
     <>
-      <header className="bg-emerald-500 py-4">
+      <header className="bg-emerald-500 h-20 flex justify-center items-center shadow-lg">
+        <img className='object-cover h-full' src='/WeatherApp/animated/rainy-1.svg'/>
         <h1 className="text-white text-center text-2xl font-bold">WeatherApp</h1>
       </header>
-      <main className="container mx-auto">
+      <main className="container mx-auto bg-gradient-to-b from-green-500 via-cyan-600 to-blue-600 p-6 my-4 w-full lg:w-1/2 rounded shadow-xl">
         <WheatherForm getWeather={getWeather} />
         <Card
           temp={weather}

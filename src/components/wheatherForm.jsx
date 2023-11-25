@@ -1,14 +1,12 @@
 export default function wheatherForm({getWeather}) {
   return (
-        <form onSubmit={getWeather} className="h-62 w-full [display:flex] [flex-direction:column] mt-4 bg-gray-100 border border-gray-300 p-6 rounded-lg">
-          <label className="pl-4 py-2">Ciudad:</label>
-          <input className="pl-2 h-8 mx-4 outline-2 outline-blue-500" type="text" name="ciudad" autoFocus placeholder="Ingrese una ciudad: Londres"/>
-          <label className="pl-4 py-2">Pais:</label>
-          <input className="pl-2 h-8 mx-4 outline-2 outline-blue-500" type="text" name="pais" placeholder="Ingrese un pais: Colombia"/>
-          <p className="pl-4 pt-2 text-gray-500">
-          Usando 
-          <a className="text-gray-700 hover:text-gray-950 underline pl-2" href="https://openweathermap.org">OpenWeatherAPi</a></p>
-          <button type="submit" className="bg-blue-500 text-white m-4 py-2">Buscar</button>
+        <form onSubmit={getWeather} className="h-52 w-full [display:flex] [flex-direction:column] mt-4 bg-transparent border-4 border-gray-200 p-6 rounded-lg">
+          <label className="pl-4 py-2 text-white font-bold">Ciudad:</label>
+          <input className="p-2 h-8 mx-4 bg-transparent border-2 border-white outline-2 font-semibold text-gray-100 placeholder:text-gray-100 outline-blue-500 focus:bg-gray-100 focus:text-black focus:placeholder:text-black transition-colors" type="text" name="ciudad" autoFocus placeholder="Ingrese una ciudad: Londres"/>
+          <p className="pl-4 pt-2 text-gray-50">
+          Usando:
+          <a className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-yellow-300 hover:from-orange-500 hover:to-yellow-500 font-bold pl-2" href="https://openweathermap.org">OpenWeatherAPi</a></p>
+          <button type="submit" className="rounded border-2 border-blue-500 bg-blue-900/25 hover:bg-blue-500 font-bold text-white m-4 py-2 transition-colors">Buscar</button>
         </form>
   )
 }
